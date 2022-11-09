@@ -13,5 +13,6 @@ jobs:
         name: automerge
         uses: "pascalgn/automerge-action@v0.15.5"
         env:
+          MERGE_FILTER_AUTHOR: testgithubexmapleszymon
           GITHUB_TOKEN: "${{secrets.GITHUB_TOKEN}}"
           BASE_BRANCHES: dev01,test01,test02
