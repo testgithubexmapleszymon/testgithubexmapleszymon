@@ -35,6 +35,7 @@ jobs:
           merge-method: merge
           
   test01:
+    needs: dev01
     name: Create PR Release to test01
     runs-on: ubuntu-latest
     steps:
@@ -61,7 +62,9 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           pull-request-number: ${{ steps.open-pr.outputs.pr_number }}
           merge-method: merge
+          
   test02:
+    needs: [dev01,test01]
     name: Create PR Release to test02
     runs-on: ubuntu-latest
     steps:
