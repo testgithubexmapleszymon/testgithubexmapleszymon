@@ -1,15 +1,23 @@
-# This is a basic workflow that is manually triggered
-
-name: Manual workflow
+name: Sync
 on:
   push:
     branches:
       - main
 
 jobs:
-  push-to-other-branches:
+  sync-branches:
     runs-on: ubuntu-latest
+    name: Syncing branches
     steps:
-      - run: git checkout dev01
-      - run: git pull origin main
-      - run: git push -u origin dev01
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Create Sync PR
+        uses: sudoStatus200/create-sync-pr@0.3.1
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          SOURCE_BRANCH: "main"
+          TARGET_BRANCH: "dev01,test01,test02"
