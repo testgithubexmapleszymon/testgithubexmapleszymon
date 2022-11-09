@@ -1,16 +1,15 @@
-name: automerge
-on:
- pull_request:
-    types:
-      - opened
+name: Auto approve
+on:  
+  pull_request:
     branches:
       - dev01
+      - test01
+      - test02
+
 jobs:
-  automerge:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@v0.15.5"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: hmarr/auto-approve-action@v3
