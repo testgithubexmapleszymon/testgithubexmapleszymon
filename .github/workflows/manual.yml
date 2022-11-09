@@ -1,0 +1,16 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push-to-other-branches:
+    runs-on: 
+      group: ubuntu-runners
+    steps:
+      - run: git checkout dev01
+      - run: git pull origin main
+      - run: git push -u origin dev01
