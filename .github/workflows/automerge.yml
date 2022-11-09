@@ -6,9 +6,11 @@ on:
       - completed
 
 jobs:
-  build:
+  automerge:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
-      - uses: hmarr/auto-approve-action@v3
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.5"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
