@@ -8,8 +8,7 @@ on:
 
 jobs:
   push-to-other-branches:
-    runs-on: 
-      group: ubuntu-runners
+    runs-on: ubuntu-latest
     steps:
       - run: git checkout dev01
       - run: git pull origin main
