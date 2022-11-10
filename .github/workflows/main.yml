@@ -4,11 +4,11 @@ on:
     branches: main
 
 jobs:
-  create_pr_automerge:
+  prautomerge:
     runs-on: ubuntu-latest
-    name: Create pr and automerge to release brnaches
+    name: prautomerge
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Execute scripts
-        uses: ./.github/actions/create_pr_automerge
+        uses: ./.github/actions/prautomerge

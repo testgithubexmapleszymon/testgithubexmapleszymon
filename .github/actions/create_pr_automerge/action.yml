@@ -1,6 +1,0 @@
-name: "Create PR&AutoMerge to Release Branches"
-runs:
-  using: "composite"
-  steps:
-    - run: ./script.sh
-      shell: bash
