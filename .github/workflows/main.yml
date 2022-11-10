@@ -10,6 +10,12 @@ jobs:
     steps:
       - id: CheckoutRepository
         uses: actions/checkout@v3
-      - run: gh pr create --base main --head dev01 --title "[automated] pr release dev01" --body "[automated] pr release dev01"
+      - run: |
+          prUrl="$gh pr create --base main --head dev01 --title '[automated] pr release dev01' --body '[automated] pr release dev01'"
+          echo 'PR_URL='$prUrl >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          gh pr merge "$PR_URL" --merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
