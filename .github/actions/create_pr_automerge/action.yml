@@ -6,5 +6,5 @@ runs:
       shell: bash
     - run: sudo apt install gh
       shell: bash
-    - run: create_pr_automerge.sh
+    - run: script.sh
       shell: bash
