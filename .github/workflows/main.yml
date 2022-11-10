@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: prautomerge
     steps:
-      - name: Check out repository
+      - id: CheckoutRepository
         uses: actions/checkout@v3
-      - name: Execute scripts
+      - id: ExecuteScrit
         uses: ./.github/actions/prautomerge
