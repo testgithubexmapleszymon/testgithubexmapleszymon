@@ -1,7 +1,0 @@
-name: 'prautomerge'
-description: 'pr auto merge'
-runs:
-  using: "composite"
-  steps:
-    - run: gh pr create --base main --head dev01 --title "[automated] pr release dev01" --body "[automated] pr release dev01"
-      shell: bash
