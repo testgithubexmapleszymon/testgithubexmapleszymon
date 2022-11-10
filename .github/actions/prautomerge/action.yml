@@ -1,4 +1,5 @@
-name: "prautomerge"
+name: 'prautomerge'
+description: 'pr auto merge'
 runs:
   using: "composite"
   steps:
