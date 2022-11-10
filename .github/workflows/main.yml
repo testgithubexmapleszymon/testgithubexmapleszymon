@@ -6,7 +6,7 @@ on:
 jobs:
   prautomerge:
     runs-on: ubuntu-latest
-    name: prautomerge
+    name: Pr Auto Merge
     steps:
       - id: CheckoutRepository
         uses: actions/checkout@v3

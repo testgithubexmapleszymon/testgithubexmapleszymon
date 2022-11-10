@@ -3,5 +3,5 @@ description: 'pr auto merge'
 runs:
   using: "composite"
   steps:
-    - run: script.sh
+    - run: echo "Goodbye"
       shell: bash
