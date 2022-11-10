@@ -1,5 +1,4 @@
 name: PrAutoMerge
-description: Create and automerge pr's to release branches
 on:
   pull_request:
   push:
