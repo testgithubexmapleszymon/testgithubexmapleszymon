@@ -2,7 +2,5 @@ name: "Create PR&AutoMerge to Release Branches"
 runs:
   using: "composite"
   steps:
-    - run: echo Starting script.sh
-      shell: bash
-    - run: script.sh
+    - run: ./script.sh
       shell: bash

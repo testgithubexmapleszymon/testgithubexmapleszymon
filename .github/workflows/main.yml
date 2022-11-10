@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
-      - name: Execute script
+      - name: Execute scripts
         uses: ./.github/actions/create_pr_automerge
