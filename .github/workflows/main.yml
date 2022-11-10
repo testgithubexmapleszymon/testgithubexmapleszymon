@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Pr Auto Merge
     steps:
-      - id: CheckoutRepository
-        uses: actions/checkout@v3
-      - id: ExecuteScrit
-        uses: ./.github/actions/prautomerge
+      - run: gh pr create --base main --head dev01 --title "[automated] pr release dev01" --body "[automated] pr release dev01"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
