@@ -1,3 +1,4 @@
+name: PrAutoMerge
 on:
   pull_request:
   push:
