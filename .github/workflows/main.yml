@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       - id: foo
-        uses: ./.github/actions/goodbye
+        uses: .github/actions/goodbye
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
