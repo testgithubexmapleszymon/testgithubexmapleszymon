@@ -1,1 +1,1 @@
-echo "Hejo"
+echo Siema

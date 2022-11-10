@@ -2,9 +2,7 @@ name: "Create PR&AutoMerge to Release Branches"
 runs:
   using: "composite"
   steps:
-    - run: sudo apt update
-      shell: bash
-    - run: sudo apt install gh
+    - run: echo Starting script.sh
       shell: bash
     - run: script.sh
       shell: bash
