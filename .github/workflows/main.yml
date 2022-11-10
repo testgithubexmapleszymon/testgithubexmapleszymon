@@ -10,12 +10,37 @@ jobs:
     steps:
       - id: CheckoutRepository
         uses: actions/checkout@v3
-      - run: |
-          prUrl="$(gh pr create --base main --head dev01 --title '[automated] pr release dev01' --body '[automated] pr release dev01')"
+      - name: PR dev01
+        run: |
+          prUrl="$(gh pr create --base dev01 --head main --title '[automated] pr release dev01' --body '[automated] pr release dev01')"
           echo 'PR_URL='$prUrl >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
+      - name: Merge PR dev01
+        run: |
           gh pr merge "$PR_URL" --merge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: PR test01
+        run: |
+          prUrl="$(gh pr create --base test01 --head main --title '[automated] pr release test01' --body '[automated] pr release test01')"
+          echo 'PR_URL='$prUrl >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge PR test01
+        run: |
+          gh pr merge "$PR_URL" --merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: PR test02
+        run: |
+          prUrl="$(gh pr create --base test02 --head main --title '[automated] pr release test02' --body '[automated] pr release test02')"
+          echo 'PR_URL='$prUrl >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge PR test02
+        run: |
+          gh pr merge "$PR_URL" --merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
