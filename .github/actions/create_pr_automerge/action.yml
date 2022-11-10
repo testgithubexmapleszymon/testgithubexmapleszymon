@@ -1,6 +1,4 @@
 name: "Create PR&AutoMerge to Release Branches"
-inputs:
-outputs:
 runs:
   using: "composite"
   steps:
